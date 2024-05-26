@@ -1,0 +1,42 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /api
+spring:
+  jpa:
+      hibernate:
+        ddl-auto: update
+      show-sql: false
+      properties:
+        hibernate:
+          format_sql: true
+          dialect: org.hibernate.dialect.SQLServerDialect
+  datasource:
+    url: jdbc:sqlserver://localhost:1433;databaseName=ecommerce_project;encrypt=true;trustServerCertificate=true
+    username: sa
+    password: 1234567
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+firebase:
+  storage:
+    bucket: ecommerce-project-9b901.appspot.com
+    urlFormat: https://firebasestorage.googleapis.com/v0/b/%s/o/%s%s?alt=media
+
+payment:
+  vnPay:
+    url: https://sandbox.vnpayment.vn/paymentv2/vpcpay.html
+    tmnCode: YNWX48PX
+    secretKey: HJCPD3BX2CCP5MVAO2S5O5KAD2EHU4OZ
+    returnUrl: http://localhost:8081/api/payment/vn-pay-callback
+    version: 2.1.0
+    command: pay
+    orderType: other
+
+#spring.datasource2.dw.jdbc-url=jdbc:sqlserver://localhost:1433;databaseName=DW_ecommerce_project;encrypt=true;trustServerCertificate=true
+#spring.datasource2.dw.username=sa
+#spring.datasource2.dw.password=1234567
+#spring.main.allow-bean-definition-overriding=true
+
