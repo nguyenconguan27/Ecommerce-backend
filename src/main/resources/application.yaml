@@ -17,7 +17,7 @@ spring:
       username: sa
       password: 1234567
     warehouse:
-      url: jdbc:sqlserver://localhost:1433;databaseName=ecommerce_project;encrypt=true;trustServerCertificate=true
+      url: jdbc:sqlserver://localhost:1433;databaseName=DW_ecommerce_project;encrypt=true;trustServerCertificate=true
       username: sa
       password: 1234567
   data:
@@ -44,3 +44,4 @@ openai:
     key: *
     url: https://api.openai.com/v1/chat/completions
   model: gpt-3.5-turbo-16k
+
