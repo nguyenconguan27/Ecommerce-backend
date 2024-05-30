@@ -3,7 +3,7 @@ package com.ecommerceproject.apis;
 import com.ecommerceproject.dto.ImageDTO;
 import com.ecommerceproject.payload.response.ResponseObject;
 import com.ecommerceproject.service.FileService;
-import com.ecommerceproject.service.FirebaseSerivce;
+import com.ecommerceproject.service.FirebaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.http.HttpStatus;
@@ -23,7 +23,7 @@ public class FileApis {
     @Autowired
     private FileService fileService;
     @Autowired
-    private FirebaseSerivce firebaseSerivce;
+    private FirebaseService firebaseService;
 
     @GetMapping("/")
     public ResponseEntity<ByteArrayResource> getImage(@RequestParam(name = "image_id") String imageId) throws IOException {
@@ -45,7 +45,7 @@ public class FileApis {
 
     @PostMapping("/upload/{type}")
     public ResponseEntity<ResponseObject> uploadImage1(@RequestBody List<MultipartFile> files, @PathVariable String type) throws IOException {
-        List<ImageDTO> urls = firebaseSerivce.uploadFile(files, type);
+        List<ImageDTO> urls = firebaseService.uploadFile(files, type);
         return ResponseEntity.status(HttpStatus.OK).body(
                 ResponseObject.builder()
                         .message("Save image successfully")

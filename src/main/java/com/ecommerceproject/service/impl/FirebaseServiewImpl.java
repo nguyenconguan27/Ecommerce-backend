@@ -1,7 +1,7 @@
 package com.ecommerceproject.service.impl;
 
 import com.ecommerceproject.dto.ImageDTO;
-import com.ecommerceproject.service.FirebaseSerivce;
+import com.ecommerceproject.service.FirebaseService;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.storage.*;
 import org.springframework.beans.factory.annotation.Value;
@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class FirebaseServiewImpl implements FirebaseSerivce {
+public class FirebaseServiewImpl implements FirebaseService {
 
     @Value("classpath:firebase.json")
     private Resource firebaseCredential;

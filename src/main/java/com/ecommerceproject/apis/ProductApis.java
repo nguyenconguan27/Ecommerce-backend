@@ -89,7 +89,7 @@ public class ProductApis {
         else {
             pageable = PageRequest.of(pageNum - 1, pageSize);
         }
-        ProductListResponse response = productRedisService.getAllProducts(title, sortField,categoryId, pageable);
+        ProductListResponse response = productRedisService.getAllProducts(title, sortField, categoryId, pageable);
         if(response == null) {
              response = productService.getByOptions(
                     title,

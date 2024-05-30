@@ -12,9 +12,14 @@ spring:
           format_sql: true
           dialect: org.hibernate.dialect.SQLServerDialect
   datasource:
-    url: jdbc:sqlserver://localhost:1433;databaseName=ecommerce_project;encrypt=true;trustServerCertificate=true
-    username: sa
-    password: 1234567
+    operation:
+      url: jdbc:sqlserver://localhost:1433;databaseName=ecommerce_project;encrypt=true;trustServerCertificate=true
+      username: sa
+      password: 1234567
+    warehouse:
+      url: jdbc:sqlserver://localhost:1433;databaseName=ecommerce_project;encrypt=true;trustServerCertificate=true
+      username: sa
+      password: 1234567
   data:
     redis:
       host: localhost
@@ -34,7 +39,11 @@ payment:
     version: 2.1.0
     command: pay
     orderType: other
-
+openai:
+  api:
+    key: *
+    url: https://api.openai.com/v1/chat/completions
+  model: gpt-3.5-turbo-16k
 #spring.datasource2.dw.jdbc-url=jdbc:sqlserver://localhost:1433;databaseName=DW_ecommerce_project;encrypt=true;trustServerCertificate=true
 #spring.datasource2.dw.username=sa
 #spring.datasource2.dw.password=1234567

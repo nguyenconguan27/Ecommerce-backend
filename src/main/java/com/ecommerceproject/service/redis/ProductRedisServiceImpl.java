@@ -34,9 +34,15 @@ public class ProductRedisServiceImpl implements ProductRedisService{
         int pageNum = pageRequest.getPageNumber();
         int pageSize = pageRequest.getPageSize();
         Sort sort = pageRequest.getSort();
-        String sortDir = sort.getOrderFor(sortField)
-                .getDirection() == Sort.Direction.ASC ? "asc" : "desc";
-        String key = String.format("all_products:%d%d%s%s", pageNum, pageSize, sortField,sortDir);
+        String key = null;
+        if(!sortField.isEmpty()) {
+            String sortDir = sort.getOrderFor(sortField)
+                    .getDirection() == Sort.Direction.ASC ? "asc" : "desc";
+            key = String.format("all_products:%d%d%d%s%s%s", pageNum, pageSize, categoryId, sortField,sortDir, title);
+        }
+        else {
+            key = String.format("all_products:%d%d%d%s", pageNum, pageSize, categoryId, title);
+        }
         return key;
     }
     @Override

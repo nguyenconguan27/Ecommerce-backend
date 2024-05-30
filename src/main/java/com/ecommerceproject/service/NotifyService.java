@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface NotifyService {
     List<NotificationDTO> getByUser(Integer userId);
+
 }

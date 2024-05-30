@@ -2,8 +2,8 @@ package com.ecommerceproject.util;
 
 public class Constants {
     public static final String pathImage = "image/";
-    public static final long ACCESS_TOKEN_EXPIRATION = 10 * 60  * 1000;
-    public static final long REFRESH_TOKEN_EXPIRATION = 12 * 60 * 60 * 1000;
+    public static final long ACCESS_TOKEN_EXPIRATION = 60 * 60  * 1000;
+    public static final long REFRESH_TOKEN_EXPIRATION = 24 * 60 * 60 * 1000;
     public static final String JWT_SECRET = "nguyenconguan";
 
     public static final class ORDER_STATUS {

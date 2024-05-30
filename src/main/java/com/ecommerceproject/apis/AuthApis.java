@@ -56,4 +56,9 @@ public class AuthApis {
                         .build()
         );
     }
+
+    @PostMapping("/login/facebook")
+    public void loginWithFaceBook() {
+        System.out.println("facebook");
+    }
 }

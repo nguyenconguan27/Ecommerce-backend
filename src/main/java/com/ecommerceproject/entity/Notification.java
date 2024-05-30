@@ -17,6 +17,7 @@ import java.sql.Date;
 
 public class Notification {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer Id;
     private Date date;
     private Integer status;
